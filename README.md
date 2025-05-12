@@ -2,6 +2,16 @@
 
 This sample demonstrates how to use the Powertools for AWS Lambda Idempotency utility together with Valkey on ElastiCache to provide idempotency for your AWS Lambda functions.
 
+```mermaid
+flowchart LR
+    A[API Gateway] --> B
+    B --> A
+    subgraph VPC [VPC]
+        direction LR
+        B[Lambda Function] -->|Idempotency Record| C[Valkey ElastiCache]
+    end
+```
+
 ## Deploy
 
 Clone this repository, then run the following command to install and deploy the sample:
