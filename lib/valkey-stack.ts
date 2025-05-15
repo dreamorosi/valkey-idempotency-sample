@@ -117,7 +117,7 @@ export class ValkeyStack extends Stack {
 
     api.addRoutes({
       path: '/test',
-      methods: [HttpMethod.GET],
+      methods: [HttpMethod.POST],
       integration: new HttpLambdaIntegration('ValkeyIntegration', fn),
     });
 
